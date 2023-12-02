@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ikiabilgisayar/constants.dart';
 import 'package:ikiabilgisayar/screens/home_screen/footer.dart';
 import 'package:ikiabilgisayar/screens/home_screen/ortaklik.dart';
 import 'package:ikiabilgisayar/screens/home_screen/tanitim.dart';
@@ -10,13 +11,13 @@ class AnaSayfa extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(scrolledUnderElevation:0 ,backgroundColor: Colors.white54,
+        appBar: AppBar(scrolledUnderElevation:0 ,backgroundColor: ikiaBeyaz,
           toolbarHeight: 140,
           title: Padding(
           padding: const EdgeInsets.only(bottom: 20,top: 60, left: 150, right: 150),
           child: Row(
             children:[
-              SizedBox( height: 80,child: Image.asset("assets/images/saydam2a.png")),
+              SizedBox(child: Image.asset("assets/images/ikialogo.png", scale: 6,)),
               const Spacer(),
               const NavBarTitle(title:'Çözümler'),
               const SizedBox(width: 20,),
@@ -104,7 +105,7 @@ class _NavBarTitleState extends State<NavBarTitle> {
                 child: Text( widget.title, style: TextStyle(
                   fontFamily: 'Raleway',
                   
-                             color: hover==true? const Color.fromARGB(255, 95, 78, 77): const Color.fromARGB(255, 7, 196, 221),
+                             color: hover==true? ikiaSiyah : ikiaMavi,
                              fontWeight: FontWeight.w800,
                              fontSize: 16,
                              letterSpacing: 0.5
