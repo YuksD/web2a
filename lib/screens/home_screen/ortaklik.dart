@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikiabilgisayar/constants.dart';
+import 'package:ikiabilgisayar/screens/home_screen/ortak_urun.dart';
 
 class Ortaklik extends StatelessWidget {
   const Ortaklik({super.key});
@@ -25,7 +26,7 @@ class Ortaklik extends StatelessWidget {
           ),
           border: Border.all(color: Colors.transparent)),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
               alignment: Alignment.center,
@@ -39,66 +40,13 @@ class Ortaklik extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    const Spacer(
-                      flex: 2,
-                    ),
                     Container(
-                      alignment: Alignment.center,
-                      height: 400,
-                      width: 100,
-                      child: const Icon(Icons.arrow_back_ios,
-                          color: Color.fromARGB(70, 97, 110, 110),
-                          shadows: [
-                            BoxShadow(
-                                blurRadius: 0.9,
-                                color: Color.fromARGB(70, 151, 158, 158))
-                          ]),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(35)),
-                      height: 250,
-                      width: 200,
-                      child: const Column(
-                        children: [
-                          Spacer(
-                            flex: 3,
-                          ),
-                          Text(
-                            'ERP Programı',
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold),
-                          ),
-                          Spacer(),
-                          Text(
-                            style: TextStyle(),
-                            fillerMadde,
-                          ),
-                          Spacer(),
-                          //GeciciNokta(),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 400,
-                      width: 100,
-                      child: Icon(Icons.arrow_forward_ios_rounded,
-                          color: Color.fromARGB(255, 25, 146, 150),
-                          shadows: [
-                            BoxShadow(
-                                blurRadius: 0.9,
-                                color: Color.fromARGB(255, 160, 218, 221))
-                          ]),
-                    ),
-                    const Spacer(
-                      flex: 2,
-                    ),
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(35)),
+                        height: 450,
+                        child: const OrtakUrunleri()),
                   ],
                 ),
               ],
@@ -287,7 +235,8 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
                   height: 30,
                 ),
                 Text(
-                  'NETOLOJİ YAZILIM',
+                  textAlign: TextAlign.center,
+                  OrtaklikNetolojiTanitimBold,
                   style: TextStyle(
                       fontFamily: 'Raleway',
                       fontSize: 32,
@@ -306,7 +255,7 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
                             overflow: TextOverflow.fade,
                           ),
                           textAlign: TextAlign.center,
-                          fillerText),
+                          OrtaklikNetolojiTanitimLight),
                     )),
                 Spacer(flex: 2),
               ],
@@ -318,7 +267,8 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
                   height: 30,
                 ),
                 Text(
-                  'DİA YAZILIM',
+                  textAlign: TextAlign.center,
+                  OrtaklikDiaTanitimBold,
                   style: TextStyle(
                       fontFamily: 'Raleway',
                       fontSize: 32,
@@ -337,7 +287,7 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
                             overflow: TextOverflow.ellipsis,
                           ),
                           textAlign: TextAlign.center,
-                          fillerText4x),
+                          OrtaklikDiaTanitimLight),
                     )),
                 Spacer(
                   flex: 2,
@@ -351,7 +301,8 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
                   height: 30,
                 ),
                 Text(
-                  'ÖDÜYO YAZILIM',
+                  textAlign: TextAlign.center,
+                  OrtaklikOduyoTanitimBold,
                   style: TextStyle(
                       fontFamily: 'Raleway',
                       fontSize: 32,
@@ -370,7 +321,7 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
                             overflow: TextOverflow.ellipsis,
                           ),
                           textAlign: TextAlign.center,
-                          fillerText2x),
+                          OrtaklikOduyoTanitimLight),
                     )),
                 Spacer(
                   flex: 2,
