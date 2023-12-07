@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: '2a Bilgisayar',
       theme: ThemeData(
         fontFamily: 'Raleway',

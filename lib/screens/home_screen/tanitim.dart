@@ -62,15 +62,15 @@ class _TanitimState extends State<Tanitim> {
   List<Map<String, dynamic>> tanitimData = [
     {
       'text': TanitimText1,
-      'image': 'assets/images/experience_photo.png',
+      'image': 'assets/images/big_tree_transparent.png',
     },
     {
       'text': TanitimText2,
-      'image': 'assets/images/erp.png',
+      'image': 'assets/images/erp_transparent.png',
     },
     {
       'text': TanitimText3,
-      'image': 'assets/images/kalitecark.png',
+      'image': 'assets/images/kalite_transparent.png',
     }
   ];
 
@@ -145,16 +145,16 @@ class _TanitimState extends State<Tanitim> {
   }
 
   BoxDecoration TanitimFon() => const BoxDecoration(
-      gradient: RadialGradient(
-          focal: Alignment.center,
-          focalRadius: BorderSide.strokeAlignOutside,
-          radius: 0.5,
-          stops: [0.1, 0.9],
-          center: Alignment.topCenter,
+      boxShadow: [BoxShadow(color: Colors.white)],
+      gradient: LinearGradient(
+          transform: GradientRotation(0),
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: [0.5, 0.96],
           tileMode: TileMode.repeated,
           colors: [
-            Color.fromARGB(27, 250, 251, 251),
-            Color.fromARGB(80, 169, 234, 232),
+            Colors.white,
+            Color.fromARGB(255, 181, 238, 238),
           ])
       // LinearGradient(
       //     colors: [ikiaYesilFon3, ikiaMaviFon3],
@@ -229,7 +229,8 @@ class TanitimIcerik extends StatelessWidget {
         Container(
           margin: const EdgeInsets.all(50),
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(35)),
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(35)),
           height: 300,
           width: 450,
           child: ClipRRect(

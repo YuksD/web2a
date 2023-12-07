@@ -13,7 +13,8 @@ class AnaSayfa extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           scrolledUnderElevation: 0,
-          backgroundColor: ikiaBeyaz,
+          backgroundColor: Colors.white,
+          elevation: 0,
           toolbarHeight: 120,
           title: Padding(
             padding: const EdgeInsets.only(

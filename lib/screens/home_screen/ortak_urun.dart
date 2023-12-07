@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:ikiabilgisayar/constants.dart';
 
 class OrtakUrunleri extends StatefulWidget {
-  const OrtakUrunleri({super.key});
-
+  const OrtakUrunleri({super.key, required this.urunlerTitle});
+  final String urunlerTitle;
   @override
   State<OrtakUrunleri> createState() => _OrtakUrunleriState();
 }
 
 class _OrtakUrunleriState extends State<OrtakUrunleri> {
   late PageController _pageController;
+
   int currentPage = 0;
   List<Map<String, dynamic>> OrtakUrunData = [
     {
@@ -53,6 +54,7 @@ class _OrtakUrunleriState extends State<OrtakUrunleri> {
                 });
               },
               itemBuilder: (context, index) => OrtakUrunICerik(
+                    textTitle: widget.urunlerTitle,
                     text: OrtakUrunData[index]['text'],
                   )),
         ),
@@ -110,22 +112,38 @@ class _OrtakUrunleriState extends State<OrtakUrunleri> {
 }
 
 class OrtakUrunICerik extends StatelessWidget {
-  const OrtakUrunICerik({super.key, required this.text});
+  const OrtakUrunICerik(
+      {super.key, required this.text, required this.textTitle});
   final String text;
+  final String textTitle;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
       width: 450,
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children:
             // TEXT
             [
           Container(
             alignment: Alignment.center,
-            height: 300,
+            height: 100,
+            width: 250,
+            child: Text(
+                textAlign: TextAlign.start,
+                style: const TextStyle(
+                    letterSpacing: 0,
+                    color: ikiaSiyah,
+                    fontSize: 20,
+                    fontFamily: 'Raleway',
+                    fontWeight: FontWeight.w600),
+                textTitle),
+          ),
+          Container(
+            alignment: Alignment.center,
+            height: 200,
             width: 250,
             child: Text(
                 textAlign: TextAlign.start,
