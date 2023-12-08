@@ -32,7 +32,7 @@ class Ortaklik extends StatelessWidget {
                             borderRadius: BorderRadius.circular(35)),
                         height: 450,
                         child: const OrtakUrunleri(
-                          urunlerTitle: 'HELLO',
+                          urunlerTitle: 'titleY',
                         )),
                   ],
                 ),
@@ -65,7 +65,9 @@ class Ortaklik extends StatelessWidget {
 }
 
 class OrtaklarKutusu extends StatefulWidget {
-  const OrtaklarKutusu({Key? key}) : super(key: key);
+  const OrtaklarKutusu({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<OrtaklarKutusu> createState() => _OrtaklarKutusuState();
@@ -95,6 +97,7 @@ class _OrtaklarKutusuState extends State<OrtaklarKutusu>
       for (int i = 0; i < tabIconSizes.length; i++) {
         tabIconSizes[i] = (_tabController.index == i) ? 80.0 : 40.0;
         tabImageOpacities[i] = (_tabController.index == i) ? 1.0 : 0.5;
+        //titleIndex = _tabController.index;
       }
     });
   }
